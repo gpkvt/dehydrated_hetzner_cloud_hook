@@ -3,7 +3,7 @@ Dehydrated Hook to use with Hetzner Cloud API (mainly to use DNS-01 challenges)
 
 ## Prerequisites
 
-1. Generate an API Token for your Hetzner Cloud Account
+1. Generate an API Token for your Hetzner Cloud Account (see https://docs.hetzner.com/cloud/api/getting-started/generating-api-token/)
 2. Save the API Token into `/etc/hetzner-api-token`
 3. `sudo chown root:root /etc/hetzner-api-token`
 4. `sudo chmod 600 /etc/hetzner-api-token`
