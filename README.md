@@ -9,7 +9,7 @@ Dehydrated Hook to use with Hetzner Cloud API (mainly to use DNS-01 challenges)
 4. `chmod 600 /etc/hetzner-api-token`
 5. Install `curl`, `dig`, `jq` and `dehydrated`
 6. Create your Domain config for dehydrated (e.g. add your Domain(s) to `/etc/dehydrated/domains.txt`)
-7. Configure your Hook-Script for dehydrated (e.g. add `HOOK="/etc/dehydrated/hetzner-cloud/hook.sh"` to `/etc/dehydrated/config`)
+7. Configure your Hook-Script for dehydrated (e.g. add `HOOK="/etc/dehydrated/hooks/hetzner-cloud/hook.sh"` to `/etc/dehydrated/config`)
 
 ## Install
 
