@@ -1,4 +1,4 @@
-# dehydrated_hetzner_hook
+# dehydrated_hetzner_cloud_hook
 Dehydrated Hook to use with Hetzner Cloud API (mainly to use DNS-01 challenges)
 
 ## Prerequisites
