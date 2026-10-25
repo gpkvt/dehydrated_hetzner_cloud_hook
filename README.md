@@ -49,6 +49,8 @@ curl -sS \
   -H "Authorization: Bearer $TOKEN" \
   "https://api.hetzner.cloud/v1/zones?per_page=100" |
   jq '.zones[] | select(.name == "'$DOMAIN'") | {id, name}'
+
+unset TOKEN
 ```
 
 The Output you receive is the internal reference for the Zone (aka Domain) we need to operate in. Use it in the following command:
@@ -68,6 +70,8 @@ curl -sS \
     "details": null
   }
 }
+
+unset TOKEN
 ```
 
 The output above confirms that there a no DNS Auth records set. Which is normal before and after the dehydration run, during the run there must be such an record (might can take some seconds before it is set).
@@ -84,6 +88,8 @@ curl -sS \
   -H "Authorization: Bearer $TOKEN" \
   "https://api.hetzner.cloud/v1/zones?per_page=100" |
   jq '.zones[] | select(.name == "'$DOMAIN'") | {id, name}'
+
+unset TOKEN
 ```
 
 The Output you receive is the internal reference for the Zone (aka Domain) we need to operate in. Use it in the following command:
@@ -96,6 +102,8 @@ curl -sS -X DELETE \
   -H "Authorization: Bearer $TOKEN" \
   "https://api.hetzner.cloud/v1/zones/$ZONE/rrsets/_acme-challenge/TXT" |
   jq .
+
+unset TOKEN
 ```
 
 After executing wait some seconds for the changes to propagate through the DNS system. Then try to run dehydrated again.
