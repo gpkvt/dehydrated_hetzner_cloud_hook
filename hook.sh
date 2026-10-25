@@ -256,11 +256,6 @@ clean_challenge() {
         "${API_BASE}/zones/${zone_id}/rrsets/${rrset}/TXT/actions/remove_records" \
         --data "$payload" >/dev/null ||
         die "Failed to remove TXT value at ${fqdn}"
-
-    chown root:caddy /var/lib/dehydrated/certs -R
-    chmod 770 /var/lib/dehydrated/certs
-    chmod 770 /var/lib/dehydrated/certs/21x9.org
-    chmod 660 /var/lib/dehydrated/certs/21x9.org/*
 }
 
 main() {
